@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Technical Project Management</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="https://deepthought.education/assets/images/logo/logo.svg" alt="Logo" class="logo">
+        </div>
+        <div class="navbar-right">
+            <button class="navbar-button home-button" title="Home"></button>
+            <button class="navbar-button settings-button" title="Settings"></button>
+            <button class="navbar-button notification-button" title="Notifications"></button>
+            <div class="image-container"></div>
+            <button class="navbar-button menu-button" title="Menu"></button>
+        </div>
+        
+    </nav>
+    <div class="container">
+        <div class="header-content">
+            <h1 id="title"></h1>
+            <button id="submit-task" class="submit-task-btn">Submit Task</button>
+            <div class="title-container">
+            <p id="task-title">Explore the World of Management</p>
+            <p id="task-description"></p>
+            </div>
+            
+            
+        </div>
+
+        <section class="tasks">
+            <h2>Tasks</h2>
+            <div id="tasks" class="task-grid"></div>
+        </section>
+    </div>
+
+    <script type="application/json" id="json-data">
+        {
+            "_id": {
+                "$oid": "63b64dc9e3b230ebb60a495d"
+            },
+            "_key": "topic:2085",
+            "category": "Course",
+            "cid": {
+                "$numberDouble": "NaN"
+            },
+            "commitment": "4 hours",
+            "commitment_type": "custom",
+            "deadline": "",
+            "description": "<p>Have you ever thought, Pareto's Law can be applied to cooking? Your thinking starts when you start thinking beyond your thinking.</p><p>Let's prepare Sandwiches, we will use Pareto&rsquo;s Law. That&rsquo;s an 80-20 approach.<br>80% of the time in researching, and planning and 20% of the time in implementation.</p><p>So for preparing sandwiches, we need vegetables, bread, cheese, butter and much more. So initially we collect all the stuff and then chop the vegetables, grate the cheese, and make a mash of potato. So this all comes in 80% and then comes 20% where we will roast the bread, spread the sauce, place the mash put some cheese, and heat it for a while and our sandwich is ready.</p><p>Similarly while creating any functionality 80% of the time is spent on consequences that might appear, some parameters we have to take care of, the scope of the variable, and some dependent functions, and then 20% comes from implementation.</p><p>Let's start thinking together, and search for how you can get the essence of project management.</p>",
+            "faqs": [],
+            "globalTags": [],
+            "isActive": true,
+            "lastposttime": 0,
+            "learning_outcomes": [
+                "Bare minimum knowledge of project management",
+                "4SA Concept",
+                "Would be able to handle any project efficiently"
+            ],
+            "mainPid": 0,
+            "postcount": 0,
+            "pre_requisites": [
+                "An open mind to learn any concept",
+                "Thought of Unlearning and Relearning "
+            ],
+            "project_image": "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1114276/0413_What_is_a_Technical_Project_Manager_Luke_Social-21e35c2d76465934c0f844c396db762a.png",
+            "short_description": "You can learn project management by applying the simple methods of project management. How you can apply project management in each and every step of your deliverables? Let's figure it out together",
+            "slug": "2085/technical-project-management",
+            "status": "published",
+            "tasks": [
+                {
+                    "task_id": 18882,
+                    "task_title": "Explore the world of management",
+                    "task_description": "As a project manager, you play an important role in leading a project through initiation, planning, execution, monitoring, controlling and completion. How? Do you want to manage each and every step of your life?",
+                    "status": "notworkyet",
+                    "assets": [
+                        {
+                            "asset_id": 18883,
+                            "asset_title": "Technical Project Management",
+                            "asset_description": "Story of Alignment\r\nScope of Agility\r\nSpecific Accountable \r\nStaggering Approach\r\n\r\n",
+                            "asset_content": "https://www.youtube.com/embed/TiMRwri1xJ8",
+                            "asset_type": "display_asset",
+                            "asset_content_type": "video"
+                        },
+                        {
+                            "asset_id": 18884,
+                            "asset_title": "Threadbuild",
+                            "asset_description": "Watch the video and thread build, and jot out key threads while watching that video.",
+                            "asset_content": " ",
+                            "asset_type": "input_asset",
+                            "asset_content_type": "threadbuilder"
+                        },
+                        {
+                            "asset_id": 18885,
+                            "asset_title": "Structure your pointers",
+                            "asset_description": "Write a 400-500 word article, from your thread. Publish your understanding, and showcase your learning to the entire world.",
+                            "asset_content": " ",
+                            "asset_type": "input_asset",
+                            "asset_content_type": "article"
+                        },
+                        {
+                            "asset_id": 18886,
+                            "asset_title": "4SA Method",
+                            "asset_description": "To explore more read more",
+                            "asset_content": "https://dtthon.deepthought.education/sharer?id=01aa3cff-db8e-8d9d-afc0-1671715937878",
+                            "asset_type": "display_asset",
+                            "asset_content_type": "article"
+                        }
+                    ]
+                }
+            ],
+            "tid": 2085,
+            "timestamp": 1672891849700,
+            "title": "Technical Project Management",
+            "type": "project",
+            "uid": 100,
+            "viewcount": 0,
+            "publishedAt": 1672893847792
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dataElement = document.getElementById('json-data');
+            const data = JSON.parse(dataElement.textContent);
+
+            document.getElementById('title').innerText = data.title;
+            document.getElementById('task-description').innerText = data.tasks[0].task_description;
+           
+            
+            
+
+            const tasks = document.getElementById('tasks');
+            data.tasks.forEach(task => {
+                task.assets.forEach(asset => {
+                    const assetDiv = document.createElement('div');
+                    assetDiv.classList.add('task-card');
+                    assetDiv.id = `asset-${asset.asset_id}`;
+                    
+
+                    const headerDiv = document.createElement('div');
+                    headerDiv.classList.add('task-card-header');
+
+                    const h4 = document.createElement('h4');
+                    h4.innerText = asset.asset_title;
+
+                    const infoIconContainer = document.createElement('div');
+infoIconContainer.classList.add('info-icon-container');
+infoIconContainer.innerHTML = '<i class="fa-solid fa-circle-info"></i>';
+                    headerDiv.appendChild(h4);
+                    headerDiv.appendChild(infoIconContainer);
+                    assetDiv.appendChild(headerDiv);
+                    
+
+                    // Add asset description section
+        if (asset.asset_description) {
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.classList.add('asset-description');
+            descriptionDiv.innerHTML = `<strong>Description:</strong> <span class="description-text">${asset.asset_description}</span>`;
+            assetDiv.appendChild(descriptionDiv);
+        }
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.classList.add('task-card-content');
+
+                    if (asset.asset_type === 'input_asset') {
+                        if (asset.asset_title === 'Threadbuild') {
+                            contentDiv.innerHTML = `
+                            <div class="subthread-row">
+            <div class="subthread-container">
+                <label for="subthread1">Subthread 1</label>
+                <textarea id="subthread1" class="subthread-input" placeholder="Enter text here"></textarea>
+            </div>
+            <div class="subinterpretation-container">
+                <label for="subinterpretation1">Sub interpretation 1</label>
+                <textarea id="subinterpretation1" class="subinterpretation-input" placeholder="Enter text here"></textarea>
+            </div>
+        </div>
+        <div class="select-row">
+            <div class="select-container">
+                <select class="category-select">
+                    <option>Select category</option>
+                    <!-- Other options -->
+                </select>
+                <select class="process-select">
+                    <option>Select process</option>
+                    <!-- Other options -->
+                </select>
+            </div>
+        </div>
+        <button class="add-subthread-btn">+ Subthread</button>
+        <div class="summary-container">
+            <label for="summary">Summary for thread A</label>
+            <textarea id="summary" class="summary-input" placeholder="Enter text here"></textarea>
+        </div>
+                            `;
+                            contentDiv.querySelector('.add-subthread-btn').addEventListener('click', () => {
+                                const newSubthread = document.createElement('textarea');
+                                newSubthread.placeholder = 'New Subthread';
+                                contentDiv.insertBefore(newSubthread, contentDiv.querySelector('.add-subthread-btn'));
+                            });
+                        } else if (asset.asset_title === 'Structure your pointers') {
+                            contentDiv.innerHTML = `
+                                <textarea class="title-input" placeholder="Title"></textarea>
+                                <div class="toolbar">
+                                    <span class="toolbar-item">File</span>
+                                    <span class="toolbar-item">Edit</span>
+                                    <span class="toolbar-item">View</span>
+                                    <span class="toolbar-item">Insert</span>
+                                    <span class="toolbar-item">Tools</span>
+                                    <span class="toolbar-item">Help</span>
+                                </div>
+                                <textarea class="content-input" placeholder="Content"></textarea>
+                            `;
+                        }
+                    } else {
+                        
+                        if (asset.asset_content_type === 'video') {
+                            const iframe = document.createElement('iframe');
+                            iframe.src = asset.asset_content.trim();
+                            iframe.width = "100%";
+                            iframe.height = "315";
+                            iframe.frameBorder = "0";
+                            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                            iframe.allowFullscreen = true;
+                            contentDiv.appendChild(iframe);
+                        } else if (asset.asset_content_type === 'article') {
+                            const a = document.createElement('a');
+                            a.href = asset.asset_content.trim();
+                            a.target = "_blank";
+                            a.innerText = "Read Article";
+                            contentDiv.appendChild(a);
+                        }
+                    }
+
+                    assetDiv.appendChild(contentDiv);
+                    tasks.appendChild(assetDiv);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

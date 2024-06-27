@@ -1,0 +1,300 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+.tasks {
+  margin-bottom: 20px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.task-card {
+  border: 1px solid #ccc;
+  border-radius: 15px; /* Rounded edges */
+  padding: 0;
+  background-color: #f9f9f9;
+  height: calc(50vh - 40px); /* Adjust the height to fit the viewport without scrollbars */
+  overflow-y: hidden; /* Eliminate scrollbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.task-card-header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px; 
+}
+.info-icon-container {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.info-icon-container i {
+  color: white;
+  font-size: 18px; /* Adjust size as needed */
+}
+
+.task-card-header h4 {
+  margin: 0;
+}
+
+.task-card-content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow:auto;
+}
+
+.task-card p {
+  margin-bottom: 0;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.toolbar {
+  background-color: #f1f1f1;
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* navbar classes */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  color: white;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #777;
+}
+
+.home-button {
+  background-image: url('./images/home-button.png'); /* Replace with your home icon path */
+}
+
+.settings-button {
+  background-image: url('./images/wrench.png'); /* Replace with your settings icon path */
+}
+
+.notification-button {
+  background-image: url('./images/notif.png'); /* Replace with your notification icon path */
+}
+
+.menu-button {
+  background-image: url('./images/more.png'); /* Replace with your menu icon path */
+}
+
+.image-container {
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+  background-image: url('./images/profpic.png');
+  background-size: cover;
+  background-position: center;
+  /* Add additional styling or background image as needed */
+}
+
+.logo {
+  height: 40px;
+}
+
+/* Header classes */
+.header-content {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.submit-task-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#task-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  
+  
+}
+#task-title{
+  font-size:20px;
+  font-family: arial;
+  font-weight: 10px;
+}
+
+.title-container{
+  background:#E9ECEF
+}
+/* CSS for Threadbuild Cards */
+.threadbuild-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.subthread-row {
+  display: flex;
+  gap: 20px;
+}
+
+.subthread-container,
+.subinterpretation-container,
+.summary-container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  
+}
+
+.subthread-container label,
+.subinterpretation-container label,
+.summary-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  
+}
+
+.subthread-input,
+.subinterpretation-input,
+.summary-input {
+  width: 100%;
+  height: 100px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.select-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.select-container {
+  display: flex;
+  gap: 10px;
+}
+
+.category-select,
+.process-select {
+  width: 150px;
+}
+
+.add-subthread-btn {
+  align-self: flex-start;
+}
+
+.summary-container {
+  width: 100%;
+}
+
+/* Asset description classes */
+.asset-description {
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.asset-description::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.description-text {
+  font-style: sans-serif;
+  color: #555;
+}
+
+.asset-content {
+  padding-top: 20px;
+}
+
