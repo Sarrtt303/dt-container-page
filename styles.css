@@ -8,6 +8,11 @@ body {
 .container {
   padding: 20px;
 }
+.main-container {
+  max-width: calc(100% - 100px); /* Reduced by the width of both tabs */
+  margin: 0 auto;
+  padding: 20px;
+}
 
 header {
   text-align: center;
@@ -136,7 +141,7 @@ button:hover {
 }
 
 .navbar-button:hover {
-  background-color: #777;
+  background-color: #E9ECEF;
 }
 
 .home-button {
@@ -200,7 +205,7 @@ button:hover {
 #task-title{
   font-size:20px;
   font-family: arial;
-  font-weight: 10px;
+  font-weight: 25px;
 }
 
 .title-container{
@@ -218,7 +223,9 @@ button:hover {
   display: flex;
   gap: 20px;
 }
-
+.subinterpretation-container{
+  padding-left: 20px;
+}
 .subthread-container,
 .subinterpretation-container,
 .summary-container {
@@ -297,4 +304,280 @@ button:hover {
 .asset-content {
   padding-top: 20px;
 }
+
+/* CSS for sidetabs */
+.side-tab-container{
+  display:flex;
+  justify-content:center;
+}
+.side-tab {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 200px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* Ensure tabs are on top of other content */
+}
+
+/* Styles for left-tab */
+.left-tab {
+  left: -260px;
+  
+}
+
+.left-tab.expanded {
+  left: 0;
+  width: calc(100vw - 80%); /* Expand to full width minus some margin */
+  height: calc(100vh - 600px); /* Expand to full height minus some margin */
+  border-radius: 25px; /* Rounded rectangle shape */
+}
+
+/* Styles for right-tab */
+.right-tab {
+  right: -260px;
+}
+
+.right-tab.expanded {
+  right: 0;
+  width: calc(100vw - 80%); /* Expand to full width minus some margin */
+  height: calc(100vh - 600px); /* Expand to full height minus some margin */
+  border-radius: 25px; /* Rounded rectangle shape */
+}
+
+/* Common styles for expanded tabs */
+.side-tab.expanded .tab-header {
+  border-radius: 25px 25px 0 0; /* Rounded corners on the top */
+}
+
+.tab-header {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1100; /* Ensure header is on top */
+  
+}
+
+.tab-header h3 {
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+  color: white;
+  width: 100%; /* Ensure full width of the tab header */
+  position: relative; /* Ensure correct positioning */
+  
+}
+
+#left  {
+  
+
+  transform: rotate(180deg);
+  
+  
+  
+}
+
+#left.expanded .tab-header h3 {
+  right: 0; /* Reset the position when expanded */
+  writing-mode: horizontal-tb;
+  transform: rotate(0);
+}
+
+
+.side-tab.expanded .tab-header h3 {
+  writing-mode: horizontal-tb;
+  transform: rotate(0);
+}
+
+.info-icon-container {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px; 
+}
+
+.tab-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.left-tab .tab-header {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.right-tab .tab-header {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.right-tab .tab-header {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+
+.title-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.toolbar-item {
+  padding: 0 10px;
+  position: relative;
+}
+
+.toolbar-item::after {
+  content: '';
+  height: 20px;
+  width: 1px;
+  background-color: #ccc;
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toolbar-item:last-child::after {
+  display: none; /* Remove the separator from the last item */
+}
+
+.content-input {
+  width: 100%;
+  height: calc(100% - 100px); /* Adjust height based on the toolbar and title-input height */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  margin-top: 10px;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+/* 4SA method content styles */
+
+/* General styles for content sections */
+.content-section .example-section .intro-section{
+  padding: 20px;
+  margin-bottom: 20px;
+}
+#intro-title{
+  background-color: lightgray;
+}
+
+.content-section h2, .example-section h2 {
+  margin: 0;
+  padding: 10px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* Dark grey border for section titles */
+.section-title {
+ 
+  background-color: white;
+}
+
+.example-title {
+  
+  color: black;
+  border: 2px solid darkgrey;
+}
+
+/* Content paragraph styling */
+.content-section p, .example-section p {
+  margin: 10px 0 0 0;
+}
+
+/* Styles for the 'See more' link */
+.see-more {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.see-more a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.see-more a:hover {
+  text-decoration: underline;
+}
+
+/* Upward expanding icon styling */
+.upward-expanding-icon {
+  margin-left: auto;
+  color: black;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Botom-options styles */
+.icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between icons */
+  z-index: 2000; /* Ensure icons are on top of other content */
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.icon i {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.icon:hover {
+  background-color: #f0f0f0;
+}
+
 

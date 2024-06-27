@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Technical Project Management</title>
+    <title>DT Assignment</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <div class="side-tab-container">
+    <div class="side-tab left-tab" id="journeyBoard">
+        <div class="tab-header" id="left">
+           
+            <div class="info-icon-container">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <h3 class="left-text">Journey Board</h3>
+        </div>
+        <div class="tab-content">
+            <h4 class="journey-title">Explore the World of Management</h4>
+            <ul class="journey-list">
+                <li>Technical Project Management</li>
+                <li>Threadbuild</li>
+                <li>Structure Your Pointers</li>
+                <li>4SA Method</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="side-tab right-tab" id="notificationBoard">
+        <div class="tab-header">
+            <h3>Notification Board</h3>
+            <div class="info-icon-container">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+        </div>
+        <div class="tab-content">
+            <!-- Notification board content goes here -->
+        </div>
+    </div>
+    </div>
+    <div class="main-container">
     <nav class="navbar">
         <div class="navbar-left">
             <img src="https://deepthought.education/assets/images/logo/logo.svg" alt="Logo" class="logo">
@@ -38,7 +71,7 @@
             <div id="tasks" class="task-grid"></div>
         </section>
     </div>
-
+    </div>
     <script type="application/json" id="json-data">
         {
             "_id": {
@@ -150,8 +183,8 @@
                     h4.innerText = asset.asset_title;
 
                     const infoIconContainer = document.createElement('div');
-infoIconContainer.classList.add('info-icon-container');
-infoIconContainer.innerHTML = '<i class="fa-solid fa-circle-info"></i>';
+                    infoIconContainer.classList.add('info-icon-container');
+                    infoIconContainer.innerHTML = '<i class="fa-solid fa-circle-info"></i>';
                     headerDiv.appendChild(h4);
                     headerDiv.appendChild(infoIconContainer);
                     assetDiv.appendChild(headerDiv);
@@ -230,19 +263,68 @@ infoIconContainer.innerHTML = '<i class="fa-solid fa-circle-info"></i>';
                             iframe.allowFullscreen = true;
                             contentDiv.appendChild(iframe);
                         } else if (asset.asset_content_type === 'article') {
-                            const a = document.createElement('a');
-                            a.href = asset.asset_content.trim();
-                            a.target = "_blank";
-                            a.innerText = "Read Article";
-                            contentDiv.appendChild(a);
-                        }
+                    contentDiv.innerHTML = `
+                    <div class="content-section">
+                         <h2 class="section-title" id="intro-title">
+                          Introduction
+                         <i class="fa-solid fa-chevron-up upward-expanding-icon"></i>
+                        </h2>
+                         <p class="section-content">
+                           The 4SA Method, How to bring it into progress?
+                         </p>
+                         <div class="see-more">
+                          <a href="#">See more</a>
+                         </div>
+                   </div>
+        <div class="content-section">
+            <h2 class="section-title">
+                Thread A
+                <i class="fa-solid fa-chevron-up upward-expanding-icon"></i>
+            </h2>
+            <p class="section-content">
+                How are you going to develop your stratergy ? Which method are you going to use to develop a stratergy ? What if the project is lengthy?
+            </p>
+            <div class="see-more">
+                <a href="#">See more</a>
+            </div>
+        </div>
+        <div class="example-section">
+            <h2 class="example-title">
+                Example
+                
+            </h2>
+            <p class="example-content">
+                You have a concept , How will you put into progress?
+            </p>
+        </div>
+                    `;
+                }
                     }
 
                     assetDiv.appendChild(contentDiv);
                     tasks.appendChild(assetDiv);
                 });
             });
+            const journeyBoard = document.getElementById('journeyBoard');
+            const notificationBoard = document.getElementById('notificationBoard');
+
+            journeyBoard.querySelector('.tab-header').addEventListener('click', () => {
+                journeyBoard.classList.toggle('expanded');
+                notificationBoard.classList.remove('expanded');
+            });
+
+            notificationBoard.querySelector('.tab-header').addEventListener('click', () => {
+                notificationBoard.classList.toggle('expanded');
+                journeyBoard.classList.remove('expanded');
+            });
+            
         });
     </script>
+      <div class="icon-container">
+        <div class="icon"><i class="fa-solid fa-bell"></i></div>
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="icon"><i class="fa-solid fa-cog"></i></div>
+    </div>
+    
 </body>
 </html>
